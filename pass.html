@@ -10,12 +10,12 @@
             secretphrase = document.getElementById("secretphrase").value
             checkphrase = document.getElementById("checkphrase").value
             if (secretphrase == checkphrase) {
-                correct = correct+1;
+                correct = correct + 1;
                 document.getElementById("result").innerHTML = "Correct count " + correct;
                 alert("access allowed");
             } else {
 
-                wrong = wrong+1;
+                wrong = wrong + 1;
                 document.getElementById("result").innerHTML = "Wrong count " + wrong;
                 alert("access denied");
             }
