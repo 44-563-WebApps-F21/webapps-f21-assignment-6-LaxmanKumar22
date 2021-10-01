@@ -10,13 +10,13 @@
             secretphrase = document.getElementById("secretphrase").value
             checkphrase = document.getElementById("checkphrase").value
             if (secretphrase == checkphrase) {
-                var temp = correct++;
-                document.getElementById("result").innerHTML = "Correct count " + temp;
+                correct = correct+1;
+                document.getElementById("result").innerHTML = "Correct count " + correct;
                 alert("access allowed");
             } else {
 
-                var temp = wrong++;
-                document.getElementById("result").innerHTML = "Wrong count " + temp;
+                wrong = wrong+1;
+                document.getElementById("result").innerHTML = "Wrong count " + wrong;
                 alert("access denied");
             }
         }
@@ -28,7 +28,7 @@
 
     <form>
         <label for="secretphrase">Enter the secret phrase </label>
-        <input type="password" id="secretphrase" name="secretphrase" value=Letmein> <br>
+        <input type="password" id="secretphrase" name="secretphrase" value="Let me in"> <br>
         <label for="checkphrase">Enter a phrase</label>
         <input type="text" id="checkphrase" name="checkphrase" autofocus> <br>
         <br>
