@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Java Script and DOM</title>
+    <script>
+        var correct = 0, wrong = 0;
+        function processPhrase() {
+
+            secretphrase = document.getElementById("secretphrase").value
+            checkphrase = document.getElementById("checkphrase").value
+            if (secretphrase == checkphrase) {
+                var temp = correct++;
+                document.getElementById("result").innerHTML = "Correct count " + temp;
+                alert("access allowed");
+            } else {
+
+                var temp = wrong++;
+                document.getElementById("result").innerHTML = "Wrong count " + temp;
+                alert("access denied");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Pass phrase by Laxman Kumar Alugubelli </h1>
+
+    <form>
+        <label for="phrase1">Enter the secret phrase </label>
+        <input type="password" id="secretphrase" name="secretphrase" value=Letmein> <br>
+        <label for="phrase2">Enter a phrase</label>
+        <input type="text" id="checkphrase" name="checkphrase" autofocus> <br>
+        <br>
+        <input type="button" onclick="processPhrase()" value="Check the phrase">
+    </form>
+
+    <p id="result">Attempts display here </p>
+
+</body>
+
+</html>
