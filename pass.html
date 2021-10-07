@@ -20,6 +20,22 @@
                 alert("access denied");
             }
         }
+        var usingImage=1;
+        function newImage(){
+            Image=document.getElementById("bearImg")
+            switch (usingImage) {
+                case 1: Image.src="Gorilla.jpg"
+                        usingImage= usingImage + 1;
+                        break;
+                case 2: Image.src="Anteater.jpg"
+                        usingImage=usingImage + 1;
+                        break;
+                case 3: Image.src= "Bear.jpg"
+                        usingImage=usingImage+1;
+                        break;
+
+            }
+        }
     </script>
 </head>
 
@@ -36,6 +52,9 @@
     </form>
 
     <p id="result">Attempts display here </p>
+    <div class="container">
+        <img src="Bear.jpg" id="bearImg" alt="Bear" width="200" height="200" onclick="newImage()">
+    </div>
 
 </body>
 
