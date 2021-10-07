@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+ <title>This is a car page</title>
+<body>
+<h1>Laxman Kumar Alugubelli orders a car</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for = "Electric">Electric</label>
+    <input type="checkbox" id = "Electric" value="electric"/>
+    <br>
+    <label for = "AC">AC</label>
+    <input type="checkbox" id = "AC" value="ac"/>
+   <br>
+   <label for = "GPS">GPS</label>
+    <input type="checkbox" id = "GPS" value="gps"/>
+    <br>
+    <br>
+    <input type="button" onclick="orderCar()" value="Order a car">
+</form>
+<br>
+<form>
+   <label for = "property">Enter a property:</label>
+   <input type = "text" id = "property" value = "color"/>
+   <br>
+   <label for = "value">Enter a value:</label>
+   <input type = "text" id = "value" />
+   <br><br>
+   <input type = "button" onclick="updateCar()" value = "Update the car">
+</form>
+<br>
+<p id="resultValue">Selected car details display here </p>
+<script>
+    var my_car={}
+function orderCar()
+{
+my_car = {}
+
+if (document.getElementById("Electric").checked == true) {
+my_car['Electric'] = 'true';
+} else {
+my_car['Electric'] = 'false';
+}
+
+if (document.getElementById("AC").checked == true) {
+my_car['AC'] = 'true';
+} else {
+my_car['AC'] = 'false';
+}
+
+if (document.getElementById("GPS").checked == true) {
+my_car['GPS'] = 'true';
+} else {
+my_car['GPS'] = 'false';
+}
+document.getElementById("resultValue").innerHTML = JSON.stringify(my_car);
+
+}
+function updateCar(){
+property = document.getElementById("property").value
+value = document.getElementById("value").value
+my_car[property] = value
+document.getElementById("resultValue").innerHTML = JSON.stringify(my_car);
+}
+</script>
+
+</body>
+
+</html>
